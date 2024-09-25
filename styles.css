@@ -8,16 +8,6 @@ body {
     line-height: 2; /* Improve readability */
 }
 
-.nav-logo-container {
-    display: flex;                  /* Make logo container a flex item */
-    align-items: center;            /* Center logo vertically */
-}
-
-.nav-logo {
-    height: 15px;                  /* Adjust height as needed */
-    width: auto;                   /* Maintain aspect ratio */           /* Adds space around the logo */
-}
-
 
 .content-copy {
     max-width: 600px;
@@ -43,10 +33,8 @@ body {
 
 /* Navigation Styles */
 .home-page-nav {
-    margin-top: 40px;
     display: flex;
     justify-content: center;
-    margin-top: 0px;
     gap: 10px;
     font-weight: bold;
     opacity: 0;
@@ -117,6 +105,7 @@ h1 {
     align-items: center;
     padding-top: 80px;
     text-align: center;
+    color: black;
 }
 
 p {
@@ -240,25 +229,6 @@ p {
 }
 
 
-@media (max-width: 768px) {
-    .home-page-nav {
-        flex-direction: column;
-        gap: 15px; /* Increase spacing between nav items */
-    }
-
-    .landing-nav {
-        background-color: #f8f8f8; /* Lighter background for the nav */
-        padding: 20px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add shadow to give depth */
-        justify-content: space-between; /* Add space between logo and menu */
-    }
-
-    .landing-nav::before {
-        font-size: 28px; /* Make the burger icon larger */
-        color: #333; /* Darker color for better contrast */
-    }
-}
-
 @keyframes shimmerFadeIn {
     0% {
         opacity: 0;
@@ -275,16 +245,31 @@ p {
 
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
-        
-    body {
-            padding: 10px;
-        }
-    
+.content-copy {
+    padding: 10px
+}
+
+    .home-page-nav {
+        flex-direction: column;
+        gap: 15px; /* Increase spacing between nav items */
+    }
+
+    .landing-nav {
+        background-color: #f8f8f8; /* Lighter background for the nav */
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add shadow to give depth */
+        justify-content: space-between; /* Add space between logo and menu */
+    }
+
+
+    .landing-nav::before {
+        font-size: 28px; /* Make the burger icon larger */
+        color: #333; /* Darker color for better contrast */
+    }
 
     .landing-nav {
         flex-direction: column;
         align-items: center; /* Center the burger and links horizontally */
-        padding: 10px 20px;
     }
 
     .landing-nav::before {
@@ -294,12 +279,11 @@ p {
         margin-bottom: 10px;
         text-align: center; /* Center the burger icon */
         display: block; /* Ensure it takes full width */
-        width: 100%;
     }
 
     .landing-nav a {
         display: none; /* Hide links initially */
-        width: 100%; /* Ensure links take up full width */
+        width: 50%; /* Ensure links take up full width */
         text-align: center; /* Center the link text */
         padding: 10px 0;
         margin: 5px 0;
