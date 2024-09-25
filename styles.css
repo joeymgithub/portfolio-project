@@ -105,18 +105,29 @@ body {
 
 /* Landing Page Styles */
 h1 {
-    font-size: 2rem;
-    margin-bottom: 0px;
+    font-size: 48px;
     align-items: center;
     padding-top: 80px;
     text-align: center;
     color: black;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -1px;
 }
 
 p {
-    font-size: 1.2rem;
+    font-size: 16px;
+    max-width: 600px;
+    line-height: 1.625;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.landing {
+    font-size: 16px;
     max-width: 900px;
-    line-height: 1.2;
+    line-height: 1.625;
     text-align: center;
     margin-bottom: 30px;
     padding: 0 20px;
@@ -128,9 +139,9 @@ p {
     flex-wrap:wrap; /* Wrap tiles in rows */
     justify-content:center; /* Center tiles when there are fewer items */
     gap: 10px; /* Space between tiles */
-    padding: 20px 20px; /* Space around container */
+    padding: 0 20px 20px; /* Top | Right & Left | Bottom */
     opacity: 0;
-    animation: shimmerFadeIn 1.5s ease-in-out forwards;
+    animation: shimmerFadeIn 2.5s ease-in-out forwards;
     
 }
 
@@ -147,7 +158,7 @@ p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     overflow: hidden; /* Hide overflow content */
     text-decoration: none; /* Remove link underline */
-    transition: all 0.3s ease; /* Uniform transition for all properties */
+    transition: all 0.5s ease; /* Uniform transition for all properties */
     position: relative; /* Ensure content stays within tile */
 }
 
@@ -315,6 +326,7 @@ p {
 
     h1 {
         font-size: 1.5rem;
+        margin-top: 40px;
     }
 
     p {
@@ -348,6 +360,7 @@ p {
     }
     .tile-container {
         gap: 15px; /* Increase gap between tiles */
+
     }
 
     .home-page-nav {
