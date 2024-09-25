@@ -51,6 +51,8 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
     text-decoration:none;
+    width: 125px;
+    text-align: center;
 }
 
 .home-nav-link-journalism {
@@ -92,11 +94,14 @@ body {
 
 .landing-nav a {
     margin: 0 15px;
+    width: 100px;
     text-decoration: none;
     font-weight: bold;
+  text-align: center;
     color: black;
     font-size: 12px;
 }
+
 
 /* Landing Page Styles */
 h1 {
