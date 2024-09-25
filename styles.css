@@ -1,0 +1,372 @@
+
+body {
+    margin: 0;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: white; /* Use hex colors for consistency */
+    color: #544d4d; /* Slightly soften the black color */
+    transition: background-color 0.5s ease-in-out; /* Faster transition for a snappier feel */
+    line-height: 2; /* Improve readability */
+}
+
+.nav-logo-container {
+    display: flex;                  /* Make logo container a flex item */
+    align-items: center;            /* Center logo vertically */
+}
+
+.nav-logo {
+    height: 15px;                  /* Adjust height as needed */
+    width: auto;                   /* Maintain aspect ratio */           /* Adds space around the logo */
+}
+
+
+.content-copy {
+    max-width: 600px;
+    margin: 0 auto; /* Center the content */
+    padding: 0px; /* Add padding around the content */
+}
+
+.content {
+    max-width: 900px;
+    margin: 0 auto; /* Center the content */
+    padding: 40px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 80vh; /* Full viewport height */
+    max-width: 900px;
+    margin: 0 auto; /* Center horizontally */
+}
+
+/* Navigation Styles */
+.home-page-nav {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    gap: 10px;
+    font-weight: bold;
+    opacity: 0;
+    animation: shimmerFadeIn 2.5s ease-in-out forwards;
+}
+
+.home-nav-link-journalism,
+.home-nav-link-copywriting,
+.home-nav-link-web-dev,
+.home-nav-link-joey {
+    padding: 12px 24px; /* Keep button padding consistent */
+    border: 1px solid #484747;
+    border-radius: 5px; /* Slightly smaller radius for a sleeker look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    text-decoration:none;
+}
+
+.home-nav-link-journalism {
+    background-color: rgb(249, 249, 207);
+}
+
+.home-nav-link-copywriting {
+    background-color: rgb(199, 248, 199);
+}
+
+.home-nav-link-web-dev {
+    background-color: rgb(241, 195, 195);
+}
+
+.home-nav-link-joey {
+    background-color: white;
+}
+
+.home-nav-link-journalism:hover,
+.home-nav-link-copywriting:hover,
+.home-nav-link-web-dev:hover,
+.home-nav-link-joey:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.landing-nav {
+    position: fixed;
+    top: 0;
+    margin-top: 0;
+    padding: 5px;
+    display: flex;
+    width: 100%;  /* Keep the width set to 100% */
+    justify-content: center;
+    background-color: rgb(229, 228, 228);
+    box-sizing: border-box;  /* Add this line */
+    z-index: 1000;
+}
+
+.landing-nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    font-size: 12px;
+}
+
+/* Landing Page Styles */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0px;
+    align-items: center;
+    padding-top: 80px;
+    text-align: center;
+}
+
+p {
+    font-size: 1.2rem;
+    max-width: 900px;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+/* Tile Container */
+.tile-container {
+    display: flex;
+    flex-wrap:wrap; /* Wrap tiles in rows */
+    justify-content:center; /* Center tiles when there are fewer items */
+    gap: 10px; /* Space between tiles */
+    padding: 20px 20px; /* Space around container */
+    opacity: 0;
+    animation: shimmerFadeIn 1.5s ease-in-out forwards;
+    
+}
+
+
+.tile-journalism,
+.tile-copywriting,
+.tile-web-dev {
+    display: flex;
+    flex-direction: column;
+    width: 270px; /* Set consistent width */
+    height: 400px; /* Set consistent height */
+    border: 5px solid rgba(0, 0, 0, 0.1); /* Soften the borders */
+    border-radius: 25px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    overflow: hidden; /* Hide overflow content */
+    text-decoration: none; /* Remove link underline */
+    transition: all 0.3s ease; /* Uniform transition for all properties */
+    position: relative; /* Ensure content stays within tile */
+}
+
+.tile-journalism {
+    background-color: rgb(249, 249, 207); /* Background color for journalism tile */
+}
+
+.tile-copywriting {
+    background-color: rgb(199, 248, 199); /* Background color for copywriting tile */
+}
+
+.tile-web-dev {
+    background-color: rgb(241, 195, 195); /* Background color for web development tile */
+}
+
+.tile-journalism:hover,
+.tile-copywriting:hover,
+.tile-web-dev:hover {
+    transform: scale(1.03); /* Slightly increase hover effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Create a more prominent shadow */
+}
+
+.under-construction-sign {
+    position: absolute;
+    top: -50px;
+    left: 80px;
+    width: 200px;
+    transform: rotate(15deg);
+    z-index: 10;
+    transition: transform 0.5s ease;
+}
+
+.tile-web-dev:hover .under-construction-sign {
+    transform: rotate(0deg); /* Straighten the sign on hover */
+}
+
+/* Tile Image Wrapper */
+.tile-image-wrapper {
+    position: relative; /* Allow absolute positioning of the sticker */
+}
+
+/* Tile Image */
+.tile-image {
+    width: 100%; /* Full width */
+    height: 200px; /* Set height to 50% */
+    object-fit: cover; /* Cover the space without distortion */
+}
+
+/* Publication Sticker */
+.tile-publication-sticker {
+    position: absolute; /* Position it over the image */
+    top: 10px; /* Distance from the top */
+    left: 10px; /* Distance from the left */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 5px 10px; /* Padding around text */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 0.9rem; /* Font size for sticker */
+    font-weight: bold; /* Bold text */
+    color: #000; /* Sticker text color */
+}
+
+/* Tile Content */
+.tile-content {
+    padding: 5px; /* Inner padding for content */
+    text-align: center; /* Center align text */
+    width: 100%; /* Ensure it takes full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Tile Title */
+.tile-title {
+    font-size: 1.2rem; /* Title size */
+    font-weight: bold;
+    margin: 5px 0; /* Adjust margin */
+    color: #000; /* Title color */
+    line-height: 1.1; /* Reduced line height */
+}
+
+/* Tile Preview Text */
+.tile-preview {
+    font-size: 0.85rem;
+    color: #000;
+    margin-bottom: 4px;
+}
+
+
+@media (max-width: 768px) {
+    .home-page-nav {
+        flex-direction: column;
+        gap: 15px; /* Increase spacing between nav items */
+    }
+
+    .landing-nav {
+        background-color: #f8f8f8; /* Lighter background for the nav */
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add shadow to give depth */
+        justify-content: space-between; /* Add space between logo and menu */
+    }
+
+    .landing-nav::before {
+        font-size: 28px; /* Make the burger icon larger */
+        color: #333; /* Darker color for better contrast */
+    }
+}
+
+@keyframes shimmerFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.9) rotate(-1deg); /* Text moves upwards */
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) (scale 1) rotate(0deg); /* Final position */
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+        
+    body {
+            padding: 10px;
+        }
+    
+
+    .landing-nav {
+        flex-direction: column;
+        align-items: center; /* Center the burger and links horizontally */
+        padding: 10px 20px;
+    }
+
+    .landing-nav::before {
+        content: '\2630'; /* Unicode for the burger icon */
+        font-size: 24px;
+        cursor: pointer;
+        margin-bottom: 10px;
+        text-align: center; /* Center the burger icon */
+        display: block; /* Ensure it takes full width */
+        width: 100%;
+    }
+
+    .landing-nav a {
+        display: none; /* Hide links initially */
+        width: 100%; /* Ensure links take up full width */
+        text-align: center; /* Center the link text */
+        padding: 10px 0;
+        margin: 5px 0;
+        font-size: 16px; /* Increase font size for better readability */
+    }
+
+    /* Show links when burger menu is toggled */
+    .landing-nav.show-menu a {
+        display: block; /* Show links */
+    }
+
+    /* Change the burger icon to an 'X' when the menu is open */
+    .landing-nav.show-menu::before {
+        content: '\2715'; /* Unicode for 'X' to close the menu */
+    }
+
+    .tile-journalism, 
+    .tile-copywriting, 
+    .tile-web-dev {
+        width: 100%; /* Full width of screen */
+        height: auto; /* Adjust height to content */
+        margin-bottom: 20px; /* Add space between tiles */
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .tile-title {
+        font-size: 1rem;
+    }
+
+    .tile-image {
+        height: 150px; /* Adjust the height to fit smaller screens */
+    }
+
+    .tile-publication {
+        font-size: 0.85rem;
+    }
+
+    .tile-preview {
+        font-size: 0.75rem;
+    }
+
+    .content, .content-copy {
+        text-align: center;
+    }
+
+    
+
+    .tile-content {
+        text-align: center;
+    }
+    .tile-container {
+        gap: 15px; /* Increase gap between tiles */
+    }
+
+    .home-page-nav {
+        gap: 20px; /* More space between nav items */
+    }
+
+    .landing-nav a {
+        margin: 10px 0; /* Add more vertical spacing for nav links */
+    }
+
+}
