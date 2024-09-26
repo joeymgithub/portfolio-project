@@ -1,6 +1,7 @@
 
 body {
     margin: 0;
+    font-size: 16px;
     font-family:Arial, Helvetica, sans-serif;
     background-color: white; /* Use hex colors for consistency */
     color: #544d4d; /* Slightly soften the black color */
@@ -14,6 +15,7 @@ body {
     margin: 0 auto; /* Center the content */
     padding: 0px; /* Add padding around the content */
 }
+
 
 .content {
     max-width: 900px;
@@ -37,8 +39,6 @@ body {
     justify-content: center;
     gap: 10px;
     font-weight: bold;
-    opacity: 0;
-    animation: shimmerFadeIn 2.5s ease-in-out forwards;
 }
 
 .home-nav-link-journalism,
@@ -103,20 +103,47 @@ body {
 }
 
 
-/* Landing Page Styles */
 h1 {
-    font-size: 48px;
+    position: relative; /* Make sure it's relative for the pseudo-element */
+    font-size: 3rem;
     align-items: center;
     padding-top: 80px;
     text-align: center;
     color: black;
     font-weight: 900;
-    line-height: 1;
-    letter-spacing: -1px;
+    line-height: 1.1;
+    letter-spacing: 0.4px;
+    overflow: hidden; /* Hide overflow to contain the shimmer */
 }
 
+h1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -135%; /* Start outside the element */
+    width: 200%; /* Cover more than the element width */
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 30%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0) 70%
+    );
+    animation: shimmer 1s ease-in-out 0.5s 1 forwards; /* Run once with delay */
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+
 p {
-    font-size: 16px;
+    font-size: 1rem;
     max-width: 600px;
     line-height: 1.625;
     text-align: center;
@@ -140,8 +167,6 @@ p {
     justify-content:center; /* Center tiles when there are fewer items */
     gap: 10px; /* Space between tiles */
     padding: 0 20px 20px; /* Top | Right & Left | Bottom */
-    opacity: 0;
-    animation: shimmerFadeIn 2.5s ease-in-out forwards;
     
 }
 
@@ -245,19 +270,6 @@ p {
 }
 
 
-@keyframes shimmerFadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(10px) scale(0.9) rotate(-1deg); /* Text moves upwards */
-    }
-    50% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) (scale 1) rotate(0deg); /* Final position */
-    }
-}
 
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
@@ -271,49 +283,43 @@ p {
     }
 
     .landing-nav {
-        background-color: #f8f8f8; /* Lighter background for the nav */
-        padding: 20px;
+        background-color: #333333; /* Lighter background for the nav */
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add shadow to give depth */
         justify-content: space-between; /* Add space between logo and menu */
+        align-items: center; /* Center the burger and links horizontally */
     }
 
 
     .landing-nav::before {
         font-size: 28px; /* Make the burger icon larger */
-        color: #333; /* Darker color for better contrast */
-    }
-
-    .landing-nav {
-        flex-direction: column;
-        align-items: center; /* Center the burger and links horizontally */
-    }
-
-    .landing-nav::before {
+        color: #fff; /* Darker color for better contrast */
         content: '\2630'; /* Unicode for the burger icon */
-        font-size: 24px;
         cursor: pointer;
         margin-bottom: 10px;
+        flex-direction:column;
         text-align: center; /* Center the burger icon */
         display: block; /* Ensure it takes full width */
     }
 
+
     .landing-nav a {
         display: none; /* Hide links initially */
-        width: 50%; /* Ensure links take up full width */
+        width: 28%; 
         text-align: center; /* Center the link text */
-        padding: 10px 0;
-        margin: 5px 0;
-        font-size: 16px; /* Increase font size for better readability */
+        padding: 5px 0;
+        margin: 0px 0;
     }
 
     /* Show links when burger menu is toggled */
     .landing-nav.show-menu a {
         display: block; /* Show links */
+        font-size: 10px; 
     }
 
     /* Change the burger icon to an 'X' when the menu is open */
     .landing-nav.show-menu::before {
         content: '\2715'; /* Unicode for 'X' to close the menu */
+        font-size: 25px;
     }
 
     .tile-journalism, 
@@ -353,7 +359,6 @@ p {
         text-align: center;
     }
 
-    
 
     .tile-content {
         text-align: center;
