@@ -23,6 +23,54 @@ body {
     padding: 40px;
 }
 
+/* Style for the scrolling banners */
+.scroll-banner-left, .scroll-banner-right {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8); /* Add transparency */
+    z-index: 999;
+}
+
+.scroll-banner-left {
+    top: 50px; /* This banner will be at the top */
+}
+
+.scroll-banner-right {
+    bottom: 50px; /* This banner will be at the bottom */
+}
+
+.logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    animation: scroll-logos-horizontal 30s linear infinite;
+}
+
+.logo-container img {
+    height: 80px;
+    margin: 0 20px;
+    opacity: 0.1;
+}
+
+@keyframes scroll-logos-horizontal {
+    0% {
+        transform: translateX(105%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Ensure the main content is centered and doesn't overlap with banners */
+.container {
+    margin-top: 120px; /* Adjust based on banner height at the top */
+    margin-bottom: 120px; /* Adjust based on banner height at the bottom */
+    text-align: center;
+}
+
+
 .container {
     display: flex;
     flex-direction: column;
@@ -386,6 +434,10 @@ button {
 
     .landing-nav a {
         margin: 10px 0; /* Add more vertical spacing for nav links */
+    }
+
+    .scroll-banner-left, .scroll-banner-right {
+        display: none; /* This hides the banners on screens narrower than 768px */
     }
 
 }
