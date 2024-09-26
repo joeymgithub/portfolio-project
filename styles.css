@@ -9,7 +9,6 @@ body {
     line-height: 2; /* Improve readability */
 }
 
-
 .content-copy {
     max-width: 600px;
     margin: 0 auto; /* Center the content */
@@ -81,6 +80,9 @@ body {
     margin: 0 auto; /* Center horizontally */
 }
 
+
+
+
 /* Navigation Styles */
 .home-page-nav {
     display: flex;
@@ -91,7 +93,7 @@ body {
 
 .home-nav-link-journalism,
 .home-nav-link-copywriting,
-.home-nav-link-web-dev,
+.home-nav-link-web-dev, 
 .home-nav-link-joey {
     padding: 12px 24px; /* Keep button padding consistent */
     border: 1px solid #484747;
@@ -101,6 +103,7 @@ body {
     width: 125px;
     text-align: center;
 }
+
 
 .home-nav-link-journalism {
     background-color: rgb(249, 249, 207);
@@ -115,12 +118,14 @@ body {
 }
 
 .home-nav-link-joey {
-    background-color: white;
+    background-color: #fff;
 }
+
+
 
 .home-nav-link-journalism:hover,
 .home-nav-link-copywriting:hover,
-.home-nav-link-web-dev:hover,
+.home-nav-link-web-dev:hover, 
 .home-nav-link-joey:hover {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
@@ -148,15 +153,18 @@ body {
     z-index: 1000;
 }
 
+
 .landing-nav a {
     margin: 0 15px;
-    width: 100px;
+    width: 90px;
     text-decoration: none;
     font-weight: bold;
-  text-align: center;
+    text-align: center;
     color: black;
-    font-size: 12px;
+    font-size: 0.75rem;
 }
+
+
 
 
 h1 {
@@ -257,11 +265,10 @@ p {
 }
 
 button {
-    font-size: 1rem;
+    font-size: 0.9rem;
     background-color: rgb(241, 195, 195); /* Green */
     color: #000000;
     border: 1px solid;
-    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.1s;
 }
