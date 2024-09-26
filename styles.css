@@ -16,6 +16,7 @@ body {
     padding: 0px; /* Add padding around the content */
 }
 
+
 .content {
     max-width: 900px;
     margin: 0 auto; /* Center the content */
@@ -282,49 +283,43 @@ p {
     }
 
     .landing-nav {
-        background-color: #f8f8f8; /* Lighter background for the nav */
-        padding: 20px;
+        background-color: #333333; /* Lighter background for the nav */
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add shadow to give depth */
         justify-content: space-between; /* Add space between logo and menu */
+        align-items: center; /* Center the burger and links horizontally */
     }
 
 
     .landing-nav::before {
         font-size: 28px; /* Make the burger icon larger */
-        color: #333; /* Darker color for better contrast */
-    }
-
-    .landing-nav {
-        flex-direction: column;
-        align-items: center; /* Center the burger and links horizontally */
-    }
-
-    .landing-nav::before {
+        color: #fff; /* Darker color for better contrast */
         content: '\2630'; /* Unicode for the burger icon */
-        font-size: 24px;
         cursor: pointer;
         margin-bottom: 10px;
+        flex-direction:column;
         text-align: center; /* Center the burger icon */
         display: block; /* Ensure it takes full width */
     }
 
+
     .landing-nav a {
         display: none; /* Hide links initially */
-        width: 50%; /* Ensure links take up full width */
+        width: 28%; 
         text-align: center; /* Center the link text */
-        padding: 10px 0;
-        margin: 5px 0;
-        font-size: 16px; /* Increase font size for better readability */
+        padding: 5px 0;
+        margin: 0px 0;
     }
 
     /* Show links when burger menu is toggled */
     .landing-nav.show-menu a {
         display: block; /* Show links */
+        font-size: 10px; 
     }
 
     /* Change the burger icon to an 'X' when the menu is open */
     .landing-nav.show-menu::before {
         content: '\2715'; /* Unicode for 'X' to close the menu */
+        font-size: 25px;
     }
 
     .tile-journalism, 
@@ -364,7 +359,6 @@ p {
         text-align: center;
     }
 
-    
 
     .tile-content {
         text-align: center;
