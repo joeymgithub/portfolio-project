@@ -1,6 +1,7 @@
 
 body {
     margin: 0;
+    font-size: 16px;
     font-family:Arial, Helvetica, sans-serif;
     background-color: white; /* Use hex colors for consistency */
     color: #544d4d; /* Slightly soften the black color */
@@ -37,8 +38,6 @@ body {
     justify-content: center;
     gap: 10px;
     font-weight: bold;
-    opacity: 0;
-    animation: shimmerFadeIn 2.5s ease-in-out forwards;
 }
 
 .home-nav-link-journalism,
@@ -103,20 +102,47 @@ body {
 }
 
 
-/* Landing Page Styles */
 h1 {
-    font-size: 48px;
+    position: relative; /* Make sure it's relative for the pseudo-element */
+    font-size: 3rem;
     align-items: center;
     padding-top: 80px;
     text-align: center;
     color: black;
     font-weight: 900;
-    line-height: 1;
-    letter-spacing: -1px;
+    line-height: 1.1;
+    letter-spacing: 0.4px;
+    overflow: hidden; /* Hide overflow to contain the shimmer */
 }
 
+h1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -135%; /* Start outside the element */
+    width: 200%; /* Cover more than the element width */
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 30%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0) 70%
+    );
+    animation: shimmer 1s ease-in-out 0.5s 1 forwards; /* Run once with delay */
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+
 p {
-    font-size: 16px;
+    font-size: 1rem;
     max-width: 600px;
     line-height: 1.625;
     text-align: center;
@@ -140,8 +166,6 @@ p {
     justify-content:center; /* Center tiles when there are fewer items */
     gap: 10px; /* Space between tiles */
     padding: 0 20px 20px; /* Top | Right & Left | Bottom */
-    opacity: 0;
-    animation: shimmerFadeIn 2.5s ease-in-out forwards;
     
 }
 
@@ -245,19 +269,6 @@ p {
 }
 
 
-@keyframes shimmerFadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(10px) scale(0.9) rotate(-1deg); /* Text moves upwards */
-    }
-    50% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) (scale 1) rotate(0deg); /* Final position */
-    }
-}
 
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
