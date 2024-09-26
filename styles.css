@@ -199,6 +199,18 @@ p {
     background-color: rgb(241, 195, 195); /* Background color for web development tile */
 }
 
+button {
+    font-size: 1rem;
+    background-color: rgb(241, 195, 195); /* Green */
+    color: #000000;
+    border: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+
+
 .tile-journalism:hover,
 .tile-copywriting:hover,
 .tile-web-dev:hover {
