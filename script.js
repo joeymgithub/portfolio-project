@@ -11,4 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
             nav.classList.remove('show-menu'); // Close the menu when a link is clicked
         });
     });
+
+    document.getElementById('confettiButton').addEventListener('click', function() {
+        // Fire confetti
+        confetti();
+    });
+
+    
 });
