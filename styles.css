@@ -48,7 +48,7 @@ body {
 }
 
 .logo-container img {
-    height: 6vw; /* Logo size relative to viewport width */
+    height: 3vw; /* Logo size relative to viewport width */
     margin: 0 2vw;
     opacity: 0.1;
 }
