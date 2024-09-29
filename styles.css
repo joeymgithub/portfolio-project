@@ -1,7 +1,7 @@
 
 body {
     margin: 0;
-    font-size: 16px;
+    font-size: 1rem;
     font-family:Arial, Helvetica, sans-serif;
     background-color: white; /* Use hex colors for consistency */
     color: #544d4d; /* Slightly soften the black color */
@@ -26,18 +26,18 @@ body {
 .scroll-banner-left, .scroll-banner-right {
     position: fixed;
     width: 100%;
-    height: 100px;
+    height: 12vh;
     overflow: hidden;
     background-color: rgba(255, 255, 255, 0.8); /* Add transparency */
     z-index: 999;
 }
 
 .scroll-banner-left {
-    top: 50px; /* This banner will be at the top */
+    top: 5vh; /* This banner will be at the top */
 }
 
 .scroll-banner-right {
-    bottom: 50px; /* This banner will be at the bottom */
+    bottom: 5vh; /* This banner will be at the bottom */
 }
 
 .logo-container {
@@ -48,8 +48,8 @@ body {
 }
 
 .logo-container img {
-    height: 80px;
-    margin: 0 20px;
+    height: 6vw; /* Logo size relative to viewport width */
+    margin: 0 2vw;
     opacity: 0.1;
 }
 
@@ -169,7 +169,7 @@ body {
 
 h1 {
     position: relative; /* Make sure it's relative for the pseudo-element */
-    font-size: 3rem;
+    font-size: 6vw;
     align-items: center;
     padding-top: 80px;
     text-align: center;
@@ -217,7 +217,7 @@ p {
 }
 
 .landing {
-    font-size: 16px;
+    font-size: 1rem;
     max-width: 900px;
     line-height: 1.625;
     text-align: center;
@@ -383,10 +383,6 @@ button {
         margin-bottom: 20px; /* Add space between tiles */
     }
 
-    h1 {
-        font-size: 1.5rem;
-        margin-top: 40px;
-    }
 
     p {
         font-size: 1rem;
@@ -428,33 +424,22 @@ button {
         margin: 10px 0; /* Add more vertical spacing for nav links */
     }
 
-    .logo-container {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        animation: scroll-logos-horizontal 20s linear infinite;
+
+    .scroll-banner-left, .scroll-banner-right {
+        height: 8vh; /* Smaller height for smaller screens */
     }
-    
+
     .logo-container img {
-        height: 30px;
-        margin: 0 20px;
-        opacity: 0.1;
+        height: 6vw; /* Smaller logos for smaller screens */
+        margin: 0 1vw;
     }
+}
 
-    @keyframes scroll-logos-horizontal {
-        0% {
-            transform: translateX(120%);
-        }
-        100% {
-            transform: translateX(-180%);
-        }
+@keyframes scroll-logos-horizontal {
+    0% {
+        transform: translateX(105%);
     }
-
-    .scroll-banner-left {
-        top: 65px; /* This banner will be at the top */
-    }
-    
-    .scroll-banner-right {
-        bottom: 0px; /* This banner will be at the bottom */
+    100% {
+        transform: translateX(-105%);
     }
 }
