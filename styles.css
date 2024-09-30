@@ -169,7 +169,7 @@ body {
 
 h1 {
     position: relative; /* Make sure it's relative for the pseudo-element */
-    font-size: 6vw;
+    font-size: 4rem;
     align-items: center;
     padding-top: 80px;
     text-align: center;
@@ -363,6 +363,14 @@ button {
         gap: 10px;
         align-items: center; /* Center the burger and links horizontally */
         border-bottom: 2px solid;
+    }
+
+    h1 {
+        font-size: 1.5rem
+    }
+
+    p {
+        font: 1rem;
     }
 
 
